@@ -1,0 +1,225 @@
+# Swagger Petstore
+# 1.0.5
+# This is a sample server Petstore server.  You can find out more about Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).  For this sample, you can use the api key `special-key` to test the authorization filters.
+###
+# pet.addPet
+# Add a new pet to the store
+POST https://petstore.swagger.io/v2/pet
+Content-Type: application/json
+
+{
+    "category": {
+        "id": 0,
+        "name": "string"
+    },
+    "id": 0,
+    "name": "doggie",
+    "photoUrls": [
+        "string"
+    ],
+    "status": "available",
+    "tags": [
+        "string"
+    ]
+}
+
+
+###
+# pet.updatePet
+# Update an existing pet
+PUT https://petstore.swagger.io/v2/pet
+Content-Type: application/json
+
+{
+    "category": {
+        "id": 0,
+        "name": "string"
+    },
+    "id": 0,
+    "name": "doggie",
+    "photoUrls": [
+        "string"
+    ],
+    "status": "available",
+    "tags": [
+        "string"
+    ]
+}
+
+
+###
+# store.getInventory
+# Returns pet inventories by status
+# Returns a map of status codes to quantities
+GET https://petstore.swagger.io/v2/store/inventory
+api_key: {{_auth_api_key}}
+Content-Type: application/json
+
+
+###
+# user.createUser
+# Create user
+# This can only be done by the logged in user.
+POST https://petstore.swagger.io/v2/user
+Content-Type: application/json
+
+{
+    "email": "string",
+    "firstName": "string",
+    "id": 0,
+    "lastName": "string",
+    "password": "string",
+    "phone": "string",
+    "userStatus": 0,
+    "username": "string"
+}
+
+
+###
+# user.createUsersWithArrayInput
+# Creates list of users with given input array
+POST https://petstore.swagger.io/v2/user/createWithArray
+Content-Type: application/json
+
+
+
+
+###
+# pet.uploadFile
+# uploads an image
+POST https://petstore.swagger.io/v2/pet/0/uploadImage
+Content-Type: application/json
+
+
+###
+# pet.findPetsByTags
+# Finds Pets by tags
+# Multiple tags can be provided with comma separated strings. Use tag1, tag2, tag3 for testing.
+GET https://petstore.swagger.io/v2/pet/findByTags
+ ?tags=string
+Content-Type: application/json
+
+
+###
+# pet.deletePet
+# Deletes a pet
+DELETE https://petstore.swagger.io/v2/pet/0
+api_key: {{_header_api_key}}
+Content-Type: application/json
+
+
+###
+# pet.getPetById
+# Find pet by ID
+# Returns a single pet
+GET https://petstore.swagger.io/v2/pet/0
+api_key: {{_auth_api_key}}
+Content-Type: application/json
+
+
+###
+# pet.updatePetWithForm
+# Updates a pet in the store with form data
+POST https://petstore.swagger.io/v2/pet/0
+Content-Type: application/json
+
+
+###
+# user.createUsersWithListInput
+# Creates list of users with given input array
+POST https://petstore.swagger.io/v2/user/createWithList
+Content-Type: application/json
+
+
+
+
+###
+# user.getUserByName
+# Get user by user name
+GET https://petstore.swagger.io/v2/user/string
+Content-Type: application/json
+
+
+###
+# user.updateUser
+# Updated user
+# This can only be done by the logged in user.
+PUT https://petstore.swagger.io/v2/user/string
+Content-Type: application/json
+
+{
+    "email": "string",
+    "firstName": "string",
+    "id": 0,
+    "lastName": "string",
+    "password": "string",
+    "phone": "string",
+    "userStatus": 0,
+    "username": "string"
+}
+
+
+###
+# user.deleteUser
+# Delete user
+# This can only be done by the logged in user.
+DELETE https://petstore.swagger.io/v2/user/string
+Content-Type: application/json
+
+
+###
+# user.loginUser
+# Logs user into the system
+GET https://petstore.swagger.io/v2/user/login
+ ?password=string&username=string
+Content-Type: application/json
+
+
+###
+# user.logoutUser
+# Logs out current logged in user session
+GET https://petstore.swagger.io/v2/user/logout
+Content-Type: application/json
+
+
+###
+# pet.findPetsByStatus
+# Finds Pets by status
+# Multiple status values can be provided with comma separated strings
+GET https://petstore.swagger.io/v2/pet/findByStatus
+ ?status=available
+Content-Type: application/json
+
+
+###
+# store.placeOrder
+# Place an order for a pet
+POST https://petstore.swagger.io/v2/store/order
+Content-Type: application/json
+
+{
+    "complete": false,
+    "id": 0,
+    "petId": 0,
+    "quantity": 0,
+    "shipDate": "string",
+    "status": "placed"
+}
+
+
+###
+# store.getOrderById
+# Find purchase order by ID
+# For valid response try integer IDs with value >= 1 and <= 10. Other values will generated exceptions
+GET https://petstore.swagger.io/v2/store/order/0
+Content-Type: application/json
+
+
+###
+# store.deleteOrder
+# Delete purchase order by ID
+# For valid response try integer IDs with positive integer value. Negative or non-integer values will generate API errors
+DELETE https://petstore.swagger.io/v2/store/order/0
+Content-Type: application/json
+
+
